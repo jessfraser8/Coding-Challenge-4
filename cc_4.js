@@ -11,7 +11,7 @@ class Car {
     accelerate(){
         this.speed = this.speed + 10;
         console.log(`The new speed is ${this.speed} km/h.`);
-        return this.speed + 10;
+        return this.speed;
     }
 
 //Add brake method.
@@ -27,5 +27,12 @@ class EV extends Car {
     constructor(make, speed, charge){
         super(make, speed);
         this.charge = charge;
+    }
+
+//Add charge battery method.
+    chargeBattery(chargeTo){
+        this.charge = chargeTo;
+        console.log(`The new charge is ${this.charge}.`)
+        return this.charge;
     }
 }
