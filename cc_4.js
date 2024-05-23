@@ -7,14 +7,14 @@ class Car {
         console.log(`The car is a ${make} driving ${speed} km/h.`);
     }
 
-//Add acceleration method.
+//Add acceleration method that increases the speed by 10 km/h.
     accelerate(){
         this.speed = this.speed + 10;
         console.log(`The new speed is ${this.speed} km/h.`);
         return this.speed;
     }
 
-//Add brake method.
+//Add brake method that decreases the speed by 5 km/h.
     brake(){
         this.speed = this.speed - 5;
         console.log(`The new speed is ${this.speed} km/h.`);
@@ -34,5 +34,17 @@ class EV extends Car {
         this.charge = chargeTo;
         console.log(`The new charge is ${this.charge}.`)
         return this.charge;
+    }
+
+//Update accelerate model to increase speed by 20 and decrease charge by 1.
+    accelerate() {
+        if (this.charge > 1) {
+            this.speed = this.speed + 20;
+            this.charge = this.charge - 1;
+            console.log(`${this.make} going ${this.speed} km/h, with a charge of ${this.charge}%.`);
+        } else {
+            console.log("Battery dead! Please charge before accelerating.");
+        }
+        return this.speed & this.charge;
     }
 }
