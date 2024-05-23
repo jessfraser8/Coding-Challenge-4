@@ -32,7 +32,7 @@ class EV extends Car {
 //Add charge battery method.
     chargeBattery(chargeTo){
         this.charge = chargeTo;
-        console.log(`The new charge is ${this.charge}.`)
+        console.log(`The new charge is ${this.charge}%.`)
         return this.charge;
     }
 
@@ -48,3 +48,12 @@ class EV extends Car {
         return this.speed & this.charge;
     }
 }
+
+//Test an instance of the EV class with accelerate, brake, and chargeBattery methods.
+car1 = new EV('Tesla', 120, 23);
+car1.accelerate();
+car1.brake();
+car1.accelerate();
+car1.chargeBattery(90);
+car1.accelerate();
+car1.brake();
